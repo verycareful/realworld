@@ -56,3 +56,7 @@ changes_version.md
 
 # Logs
 *.log
+
+# Nested clone of this same repo on the 1.21 branch, so both Minecraft lines
+# are on disk at once and neither copy ever switches branch. Never a submodule.
+/realworld-1.21/
