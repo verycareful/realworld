@@ -6,27 +6,60 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Ver
 
 ## [Unreleased]
 
-Two versions in preparation, one per line: `2.1.2.0` on `main` (Minecraft 26.2) and `1.1.2.0` on the `1.21` branch. Both are the first builds from source.
+Nothing yet.
+
+## [2.1.2.0] - 2026-09-12 13:34 IST
+
+First release of the 26.2 line, and the first build from source. Minecraft 26.2 and later, Fabric Loader 0.19.3, Fabric API, Java 25.
 
 ### Added
 
-- `/realworld locate <biome> [radius] [step]`, on the 26.2 line only. Vanilla's `/locate biome` hardcodes a 6400 block radius, which at 16x scaling covers roughly what 400 blocks covers unscaled. Defaults to 64000 blocks at step 64, accepts a radius up to 10,000,000. Ported from Terramax.
+- `/realworld locate <biome> [radius] [step]`. Vanilla's `/locate biome` hardcodes a 6400 block radius, which at 16x scaling covers roughly what 400 blocks covers unscaled. Defaults to 64000 blocks at step 64, accepts a radius up to 10,000,000. Ported from Terramax.
 - Source repository. The mod previously existed only as a built jar.
-- GitHub Actions workflow building on Ubuntu.
-- README, this changelog, and a `LICENSE.txt`.
+- Release workflow: pushing a `v<version>` tag builds the jar, checks the tag against `mod_version` and this line, and publishes a GitHub release with notes taken from this file.
+- Build workflow on every push and pull request.
+- README, this changelog, and the full Apache-2.0 text in `LICENSE.txt`.
 
 ### Changed
 
 - Relicensed from CC0-1.0 to Apache-2.0.
-- Version scheme is now four-part (see the note at the top). The 26.2 line begins at `2.1.2.0` to sit level with the 1.21 line rather than restarting.
+- Version scheme is now four-part (see the note at the top). This line begins at `2.1.2.0` to sit level with the 1.21 line rather than restarting.
 - Config class rewritten from the decompiled output into maintainable source: named constants for the vanilla multiplier, vanilla octave offset and default, and cleaner file handling. Behaviour is unchanged, including the on-disk format of `config/realworld.json`.
-- 26.2 line depends on Fabric Loader 0.19.3, Fabric API, and Java 25, and declares `minecraft >=26.2`.
-- 1.21 line declares `minecraft >=1.21 <26`. The upper bound exists so the two lines never both claim the same game version.
+- Declares `minecraft >=26.2`, `fabricloader >=0.19.3`, `java >=25`, and depends on Fabric API for command registration.
 
 ### Removed
 
 - `weirdness_large.json` override. No such vanilla noise exists in any 1.21 or 26.x version, so the file never did anything.
-- `Realworld.id()`. Never called. With it gone the 1.21 line contains no Minecraft symbols at all, which is what makes its wide version range safe rather than lucky.
+- `Realworld.id()`. Never called.
+
+### Known
+
+- `biomeScaleMultiplier` in the config is read and logged but not applied. The four noise overrides are fixed at 16x. Tracked in the issue tracker.
+
+## [1.1.2.0] - 2026-09-12 13:34 IST
+
+First build from source on the 1.21 line. Minecraft 1.21 through 1.21.11, Fabric Loader 0.15 or later, Java 21. No Fabric API needed.
+
+This line contains no Minecraft code at all, only the datapack and the config reader, which is what lets it declare such a wide version range. `/realworld locate` is not on this line: it needs Minecraft's command API, which would pin it to one version.
+
+### Added
+
+- Source repository. The mod previously existed only as a built jar.
+- Release workflow, as on the 26.2 line but pinned to line 1 and Java 21. Releases here are never marked as the repository's latest, so a 1.21 maintenance release does not displace the 26.2 line.
+- Build workflow on every push and pull request.
+- README, this changelog, and the full Apache-2.0 text in `LICENSE.txt`.
+
+### Changed
+
+- Relicensed from CC0-1.0 to Apache-2.0.
+- Version scheme is now four-part (see the note at the top).
+- Config class rewritten from the decompiled output, as on the 26.2 line. Behaviour and on-disk format unchanged.
+- Declares `minecraft >=1.21 <26`. The upper bound exists so the two lines never both claim the same game version. Fabric API is no longer a dependency: the mod never used it.
+
+### Removed
+
+- `weirdness_large.json` override. Never did anything on any version.
+- `Realworld.id()`. Never called. With it gone this line has no `net.minecraft` symbols at all, verified on the built jar.
 
 ### Known
 

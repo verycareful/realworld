@@ -1,6 +1,6 @@
 # Builds the jar and publishes a GitHub release when a version tag is pushed.
 #
-# The tag is v<mod_version>, for example v2.1.2.0. The workflow runs from the
+# The tag is mod_version itself, for example 2.1.2.0. The workflow runs from the
 # copy of this file at the tagged commit, so each branch's copy carries the
 # JDK and Minecraft line that branch builds for, and no branch logic is needed.
 #
@@ -13,7 +13,7 @@ name: release
 on:
   push:
     tags:
-      - 'v*'
+      - '[0-9]*'
 
 permissions:
   contents: write
@@ -31,14 +31,14 @@ jobs:
 
       - name: check tag against gradle.properties
         run: |
-          tag="${GITHUB_REF_NAME#v}"
+          tag="$GITHUB_REF_NAME"
           version="$(sed -n 's/^mod_version=//p' gradle.properties)"
           if [ "$tag" != "$version" ]; then
-            echo "::error::tag v$tag does not match mod_version=$version"
+            echo "::error::tag $tag does not match mod_version=$version"
             exit 1
           fi
           if [ "${tag%%.*}" != "$LINE" ]; then
-            echo "::error::tag v$tag is not on line $LINE; this branch's workflow only releases $LINE.x.y.z"
+            echo "::error::tag $tag is not on line $LINE; this branch's workflow only releases $LINE.x.y.z"
             exit 1
           fi
           echo "VERSION=$version" >> "$GITHUB_ENV"
