@@ -1,0 +1,28 @@
+{
+	"schemaVersion": 1,
+	"id": "realworld",
+	"version": "${version}",
+	"name": "Realworld",
+	"description": "Makes the vanilla Large Biomes preset larger still. Select 'Large Biomes' when creating a world.",
+	"authors": [
+		"Sricharan Suresh"
+	],
+	"contact": {
+		"sources": "https://github.com/verycareful/realworld",
+		"issues": "https://github.com/verycareful/realworld/issues"
+	},
+	"license": "Apache-2.0",
+	"icon": "assets/realworld/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.fury.realworld.Realworld"
+		]
+	},
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": ">=26.2",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

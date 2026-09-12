@@ -1,0 +1,58 @@
+# gradle
+
+.gradle/
+build/
+out/
+classes/
+
+# eclipse
+
+*.launch
+
+# idea
+
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# vscode
+
+.settings/
+.vscode/
+bin/
+.classpath
+.project
+
+# macos
+
+*.DS_Store
+
+# fabric
+
+run/
+
+# java
+
+hs_err_*.log
+replay_*.log
+*.hprof
+*.jfr
+
+# realworld
+
+# Private working notes. Nothing under local/ is public.
+local/
+
+# Agent instructions and project conventions, kept private
+CLAUDE.md
+
+# Working memory for uncommitted changes (see dev-workflow)
+changes_version.md
+
+# Jars, except the Gradle wrapper which MUST be committed or ./gradlew breaks.
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Logs
+*.log
