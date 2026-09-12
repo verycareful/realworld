@@ -1,15 +1,14 @@
 # Realworld
 <!-- Language & platform -->
-[![Java](https://img.shields.io/badge/Java-25+-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![Minecraft](https://img.shields.io/badge/Minecraft-26.2-62B47A?style=flat-square&logo=minecraft&logoColor=white)](https://www.minecraft.net/)
+[![Java](https://img.shields.io/badge/Java-21+-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.21-62B47A?style=flat-square&logo=minecraft&logoColor=white)](https://www.minecraft.net/)
 <!-- Mod toolchain. Fabric and Loom have no shields.io logos; swap for logo badges if any appear. -->
 [![Fabric Loader](https://img.shields.io/badge/Fabric%20Loader-0.19.3-DBD0B4?style=flat-square)](https://fabricmc.net/)
-[![Fabric API](https://img.shields.io/badge/Fabric%20API-0.156.0%2B26.2-DBD0B4?style=flat-square)](https://github.com/FabricMC/fabric)
 [![Fabric Loom](https://img.shields.io/badge/Fabric%20Loom-1.17--SNAPSHOT-DBD0B4?style=flat-square)](https://github.com/FabricMC/fabric-loom)
 <!-- Build -->
 [![Gradle](https://img.shields.io/badge/Gradle-9.5.1-02303A?style=flat-square&logo=gradle&logoColor=white)](https://gradle.org/)
 <!-- Project -->
-[![Version](https://img.shields.io/badge/version-2.1.2.0-blue?style=flat-square)](gradle.properties)
+[![Version](https://img.shields.io/badge/version-1.1.2.0-blue?style=flat-square)](gradle.properties)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](LICENSE.txt)
 [![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)](.)
 
@@ -19,7 +18,7 @@ Nothing else changes. Vanilla's generator, structures and biome set are untouche
 
 ## Usage
 
-1. Install [Fabric Loader](https://fabricmc.net/use/) and [Fabric API](https://modrinth.com/mod/fabric-api).
+1. Install [Fabric Loader](https://fabricmc.net/use/). Fabric API is not required on this line.
 2. Drop the Realworld jar into `mods/`.
 3. Create a new world and pick **Large Biomes** as the world type.
 

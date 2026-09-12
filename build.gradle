@@ -24,9 +24,8 @@ dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	implementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
-	// Needed for CommandRegistrationCallback, which /realworld locate registers
-	// through. The datapack half of the mod does not use it.
-	implementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_api_version}"
+	// No Fabric API. This line uses only Fabric Loader (ModInitializer,
+	// FabricLoader), which is what lets it declare such a wide Minecraft range.
 }
 
 processResources {
@@ -39,7 +38,7 @@ processResources {
 }
 
 tasks.withType(JavaCompile).configureEach {
-	it.options.release = 25
+	it.options.release = 21
 }
 
 java {
@@ -47,8 +46,8 @@ java {
 	// this is present. Without it no sources jar is produced.
 	withSourcesJar()
 
-	sourceCompatibility = JavaVersion.VERSION_25
-	targetCompatibility = JavaVersion.VERSION_25
+	sourceCompatibility = JavaVersion.VERSION_21
+	targetCompatibility = JavaVersion.VERSION_21
 }
 
 jar {
