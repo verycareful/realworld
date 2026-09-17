@@ -4,37 +4,11 @@ All notable changes to Realworld are documented here.
 
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versions are four-part, `<line>.<major>.<minor>.<patch>`, where the first component names the Minecraft line: `1` for 1.21, `2` for 26.2. The two lines move in lockstep on the remaining components, so a change to shared content (datapack, config, docs) appears in both. Fabric Loader's semver parser accepts any number of components, so dependency ranges work on these as normal.
 
-## [Unreleased]
-
-Nothing yet.
-
-## [2.1.2.0] - 2026-09-12 13:34 IST
-
-First release of the 26.2 line, and the first build from source. Minecraft 26.2 and later, Fabric Loader 0.19.3, Fabric API, Java 25.
-
-### Added
-
-- `/realworld locate <biome> [radius] [step]`. Vanilla's `/locate biome` hardcodes a 6400 block radius, which at 16x scaling covers roughly what 400 blocks covers unscaled. Defaults to 64000 blocks at step 64, accepts a radius up to 10,000,000. Ported from Terramax.
-- Source repository. The mod previously existed only as a built jar.
-- Release workflow: pushing a `v<version>` tag builds the jar, checks the tag against `mod_version` and this line, and publishes a GitHub release with notes taken from this file.
-- Build workflow on every push and pull request.
-- README, this changelog, and the full Apache-2.0 text in `LICENSE.txt`.
+## [1.1.3.0] - 2026-09-17 13:02 IST
 
 ### Changed
 
-- Relicensed from CC0-1.0 to Apache-2.0.
-- Version scheme is now four-part (see the note at the top). This line begins at `2.1.2.0` to sit level with the 1.21 line rather than restarting.
-- Config class rewritten from the decompiled output into maintainable source: named constants for the vanilla multiplier, vanilla octave offset and default, and cleaner file handling. Behaviour is unchanged, including the on-disk format of `config/realworld.json`.
-- Declares `minecraft >=26.2`, `fabricloader >=0.19.3`, `java >=25`, and depends on Fabric API for command registration.
-
-### Removed
-
-- `weirdness_large.json` override. No such vanilla noise exists in any 1.21 or 26.x version, so the file never did anything.
-- `Realworld.id()`. Never called.
-
-### Known
-
-- `biomeScaleMultiplier` in the config is read and logged but not applied. The four noise overrides are fixed at 16x. Tracked in the issue tracker.
+- Build target moved to Minecraft 26.1. The jar remains compatible with Minecraft 1.21 through 26.1 because it uses only Fabric Loader APIs and contains no Minecraft code.
 
 ## [1.1.2.0] - 2026-09-12 13:34 IST
 

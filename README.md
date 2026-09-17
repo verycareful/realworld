@@ -1,7 +1,7 @@
 # Realworld
 <!-- Language & platform -->
 [![Java](https://img.shields.io/badge/Java-21+-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/)
-[![Minecraft](https://img.shields.io/badge/Minecraft-1.21-62B47A?style=flat-square&logo=minecraft&logoColor=white)](https://www.minecraft.net/)
+[![Minecraft](https://img.shields.io/badge/Minecraft-1.21%20%2B%2026.1-62B47A?style=flat-square&logo=minecraft&logoColor=white)](https://www.minecraft.net/)
 <!-- Mod toolchain. Fabric and Loom have no shields.io logos; swap for logo badges if any appear. -->
 [![Fabric Loader](https://img.shields.io/badge/Fabric%20Loader-0.19.3-DBD0B4?style=flat-square)](https://fabricmc.net/)
 [![Fabric Loom](https://img.shields.io/badge/Fabric%20Loom-1.17--SNAPSHOT-DBD0B4?style=flat-square)](https://github.com/FabricMC/fabric-loom)
@@ -58,7 +58,7 @@ Two lines are maintained as branches. The first component of the version number 
 | Branch | Minecraft | Version | Command |
 |---|---|---|---|
 | `main` | 26.2 and later | `2.x.y.z` | yes |
-| `1.21` | 1.21 up to 1.21.11 | `1.x.y.z` | no |
+| `1.21` | 1.21 through 26.1 | `1.x.y.z` | no |
 
 The `1.21` line contains no Minecraft code at all, only the datapack and config, which is what lets it declare such a wide range. The command needs Minecraft's command API and pins the `main` line to 26.2.
 
@@ -68,7 +68,7 @@ The `1.21` line contains no Minecraft code at all, only the datapack and config,
 ./gradlew build
 ```
 
-Requires JDK 25 (`main`) or JDK 21 (`1.21`). The jar lands in `build/libs/`.
+Requires JDK 25 (`main`) or JDK 21 (`1.21`). This branch builds against Minecraft 26.1 and supports Minecraft 1.21 through 26.1. The jar lands in `build/libs/`.
 
 ## License
 
