@@ -59,7 +59,7 @@ Two lines are maintained as branches. The first component of the version number 
 | Branch | Minecraft | Version | Command |
 |---|---|---|---|
 | `main` | 26.2 and later | `2.x.y.z` | yes |
-| `1.21` | 1.21 up to 1.21.11 | `1.x.y.z` | no |
+| `1.21` | 1.21 up to 26.1 | `1.x.y.z` | no |
 
 The `1.21` line contains no Minecraft code at all, only the datapack and config, which is what lets it declare such a wide range. The command needs Minecraft's command API and pins the `main` line to 26.2.
 
