@@ -9,7 +9,7 @@
 <!-- Build -->
 [![Gradle](https://img.shields.io/badge/Gradle-9.5.1-02303A?style=flat-square&logo=gradle&logoColor=white)](https://gradle.org/)
 <!-- Project -->
-[![Version](https://img.shields.io/badge/version-2.1.2.0-blue?style=flat-square)](gradle.properties)
+[![Version](https://img.shields.io/badge/version-2.1.3.0-blue?style=flat-square)](gradle.properties)
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg?style=flat-square)](LICENSE.txt)
 [![Status: Active](https://img.shields.io/badge/Status-Active-brightgreen?style=flat-square)](.)
 

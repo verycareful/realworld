@@ -8,6 +8,18 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Ver
 
 Nothing yet.
 
+## [2.1.3.0] - 2026-09-20 11:55 IST
+
+Loads on Minecraft 26.3. The jar still runs on 26.2; nothing else changes.
+
+### Fixed
+
+- Freeze on "Create New World" under Minecraft 26.3. The game renamed the `worldgen/noise` fields (`firstOctave` and `amplitudes` became `base_octave`, `octave_count`, `base_amplitude` and `amplitude_modifiers`), so the four overrides failed to parse and registry loading died on the render thread instead of reaching an error dialog. Each override now carries both key sets; each version's codec ignores the keys it does not know, so one jar serves `>=26.2` as declared.
+
+### Changed
+
+- `base_amplitude` values are Mojang's parity constants (`NormalNoise.computeParityBaseAmplitude` in 26.3), which make the new normalisation reproduce the old one. Verified against both game jars: the parsed 26.3 parameters equal `NormalNoise.createParity(firstOctave, amplitudes)` for all four noises, and sampled values agree with 26.2 to float precision. Existing worlds get no seam on either version.
+
 ## [2.1.2.0] - 2026-09-12 13:34 IST
 
 First release of the 26.2 line, and the first build from source. Minecraft 26.2 and later, Fabric Loader 0.19.3, Fabric API, Java 25.
